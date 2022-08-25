@@ -5,6 +5,7 @@ import 'package:la_vie/sheared/constant/const.dart';
 import 'package:la_vie/sheared/network/local/cashe_helper.dart';
 import 'package:la_vie/sheared/network/remote/dio_helper.dart';
 import 'package:la_vie/test.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
 
 import 'layout/home_layout.dart';
 import 'modules/discussion_module/discussion_screen.dart';
@@ -41,7 +42,14 @@ class MyApp extends StatelessWidget {
         ..currentUser()..getForums()
         ,
       child: MaterialApp(
-        home: startWidget,
+        home: SplashScreenView(
+          navigateRoute: startWidget,
+          duration: 3000,
+          imageSize: 136,
+          pageRouteTransition: PageRouteTransition.SlideTransition,
+          imageSrc: "assets/image/la_via.png",
+          backgroundColor: Colors.white,
+        ),
         debugShowCheckedModeBanner: false,
       ),
     );

@@ -111,14 +111,14 @@ class AppCubit extends Cubit<AppStates> {
   List<DataProduct> Tools = [];
 
   Future getProduct() async {
-    emit(LoadingGetProductState());
-    return await DioHelper.getData(url: product, token: '$token').then((value) {
-      print('Done');
-      productData = ProductModel.fromJson(value.data);
 
       Plants = [];
       Seeds = [];
       Tools = [];
+    emit(LoadingGetProductState());
+    return await DioHelper.getData(url: product, token: '$token').then((value) {
+      print('Done');
+      productData = ProductModel.fromJson(value.data);
       productData!.data!.forEach((element) {
         if (element.type == 'PLANT') {
           Plants.add(element);

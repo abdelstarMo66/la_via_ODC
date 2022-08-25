@@ -146,7 +146,7 @@ class Home_Screen extends StatelessWidget {
                             ),
                           ),
                         ),
-                      /*if (cubit.selected == 1)
+                      if (cubit.selected == 1)
                         GridView.count(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
@@ -157,11 +157,9 @@ class Home_Screen extends StatelessWidget {
                           children: List.generate(
                             cubit.Plants.length,
                                 (index) => productItems(
-                                context,
+                                context,index,
                                 data: cubit.Plants[index],
-                                minusFunc: (){cubit.minusCount();},
-                                plusFunc: (){cubit.addCount();},
-                                count: "${cubit.count}"
+                                counter: cubit.count
                             ),
                           ),
                         ),
@@ -176,11 +174,9 @@ class Home_Screen extends StatelessWidget {
                           children: List.generate(
                             cubit.Seeds.length,
                                 (index) => productItems(
-                                context,
+                                context,index,
                                 data: cubit.Seeds[index],
-                                minusFunc: (){cubit.minusCount();},
-                                plusFunc: (){cubit.addCount();},
-                                count: "${cubit.count}"
+                                counter: cubit.count
                             ),
                           ),
                         ),
@@ -195,14 +191,12 @@ class Home_Screen extends StatelessWidget {
                           children: List.generate(
                             cubit.Tools.length,
                                 (index) => productItems(
-                                context,
+                                context,index,
                                 data: cubit.Tools[index],
-                                minusFunc: (){cubit.minusCount();},
-                                plusFunc: (){cubit.addCount();},
-                                count: "${cubit.count}"
+                                counter: cubit.count
                             ),
                           ),
-                        ),*/
+                        ),
                     ],
                   ),
                 ),
